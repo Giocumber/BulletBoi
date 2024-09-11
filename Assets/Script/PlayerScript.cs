@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameObject bulletPrefab;   
-    public Transform bulletSpawnPoint;     
-    public float bulletSpeed = 10f;        
-    public float knockbackForce = 5f;       
-      
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
+    public float bulletSpeed = 10f;
+    public float knockbackForce = 5f;
+
     private Rigidbody2D rb;
     Rigidbody2D bulletRb;
 
@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space) && bullet != null )
+            if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
             {
                 StartCoroutine(TeleportCooldown());
             }
