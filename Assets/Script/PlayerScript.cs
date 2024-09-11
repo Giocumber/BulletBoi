@@ -74,6 +74,10 @@ public class PlayerScript : MonoBehaviour
         // Set the bullet's velocity
         bulletRb.velocity = shootDirection * bulletSpeed;
 
+        // Rotate the bullet to face the shoot direction
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
         //apply knockback
         rb.AddForce(-bulletSpawnPoint.right * knockbackForce, ForceMode2D.Impulse);
     }
