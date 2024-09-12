@@ -38,6 +38,8 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
             {
                 StartCoroutine(TeleportCooldown());
+
+
             }
         }
 
@@ -88,7 +90,6 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position = bullet.transform.position; // Teleport to the bullet's position
             rb.velocity = bulletRb.velocity;
-
         }
         else
         {
