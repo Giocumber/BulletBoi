@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
+  spikeDamage: 20
 --- !u!1001 &2650868986229293143
 PrefabInstance:
   m_ObjectHideFlags: 0
