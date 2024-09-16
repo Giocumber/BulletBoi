@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpike : MonoBehaviour
 {
     public GameObject deathEffect;
+    public float spikeDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +30,10 @@ public class EnemySpike : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(collision.gameObject);
-
-            //player health -- 
-            //knock back 
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(spikeDamage);
+            Debug.Log(playerHealth.currentHealth);
         }   
-
 
     }
 }

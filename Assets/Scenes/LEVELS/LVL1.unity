@@ -4118,6 +4118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
     - target: {fileID: 4255368830199464384, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: slowMotionFactor
       value: 1
