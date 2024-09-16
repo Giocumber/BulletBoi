@@ -10,9 +10,12 @@ public class CameraController : MonoBehaviour
     [Range(0, 1)]
     public float smoothTime = 0.3f; // Set a default value for smoothTime
 
+    // Boundaries for the camera
+    public float minX, maxX, minY, maxY;
+
     void Awake()
     {
-        // Find the GameObject with the "ball" tag and get its Transform component
+        // Find the GameObject with the "Player" tag and get its Transform component
         GameObject ball = GameObject.FindGameObjectWithTag("Player");
         if (ball != null)
         {
@@ -20,7 +23,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No GameObject with tag 'player' found.");
+            Debug.LogError("No GameObject with tag 'Player' found.");
         }
     }
 
@@ -32,7 +35,14 @@ public class CameraController : MonoBehaviour
             Vector3 targetPosition = target.position + offset;
 
             // Smoothly move the camera towards the target position
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+
+            // Clamp the camera's position within the defined boundaries
+            float clampedX = Mathf.Clamp(smoothedPosition.x, minX, maxX);
+            float clampedY = Mathf.Clamp(smoothedPosition.y, minY, maxY);
+
+            // Apply the clamped position to the camera
+            transform.position = new Vector3(clampedX, clampedY, smoothedPosition.z);
         }
     }
 }
