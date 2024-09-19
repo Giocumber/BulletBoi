@@ -6,12 +6,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
-    public float BulletHealthreduct;
     public GameObject deathEffect;
+
+    public GameObject healthBarObj;
 
     private void Start()
     {
-        currentHealth = 100;
+        
     }
 
     private void Update()
@@ -34,14 +35,25 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die() 
     {
-        currentHealth -= 100;
+        currentHealth = 0;
         Instantiate(deathEffect, transform.position, transform.rotation);
         gameObject.SetActive(false);
+        healthBarObj.gameObject.SetActive(false);
+
     }
 
     public void Respawn()
     {
         currentHealth = maxHealth;
         gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            TakeDamage(20);
+            Debug.Log("spikehahaha");
+        }
     }
 }

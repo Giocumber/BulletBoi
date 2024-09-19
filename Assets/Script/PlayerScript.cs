@@ -19,6 +19,9 @@ public class PlayerScript : MonoBehaviour
     private bool canShoot;
     private bool canTeleport;
 
+    public PlayerHealth playerHealth;
+    public float BulletHealthReduct;
+
 
     void Start()
     {
@@ -38,8 +41,6 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
             {
                 StartCoroutine(TeleportCooldown());
-
-
             }
         }
 
@@ -61,8 +62,10 @@ public class PlayerScript : MonoBehaviour
         canTeleport = true;
     }
 
-    void Shoot()
+    public void Shoot()
     {
+        playerHealth.TakeDamage(BulletHealthReduct);
+
         bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         // Get the mouse position in world space
@@ -81,9 +84,12 @@ public class PlayerScript : MonoBehaviour
         bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         //apply knockback
-        rb.AddForce(-bulletSpawnPoint.right * knockbackForce, ForceMode2D.Impulse);
+        KnockBack();
+    }
 
-     
+    public void KnockBack()
+    {
+        rb.AddForce(-bulletSpawnPoint.right * knockbackForce, ForceMode2D.Impulse);
     }
 
     void TeleportToBullet()
