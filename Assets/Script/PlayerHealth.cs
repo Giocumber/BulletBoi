@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
-
+    public float BulletHealthreduct;
     public GameObject deathEffect;
 
     private void Start()

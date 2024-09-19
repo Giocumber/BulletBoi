@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject bullet;
     public float bulletAttackCD;
     public float teleportCD;
-
+   
     private bool canShoot;
     private bool canTeleport;
 
@@ -82,6 +82,8 @@ public class PlayerScript : MonoBehaviour
 
         //apply knockback
         rb.AddForce(-bulletSpawnPoint.right * knockbackForce, ForceMode2D.Impulse);
+
+     
     }
 
     void TeleportToBullet()
