@@ -8,6 +8,9 @@ public class EnemyScript : MonoBehaviour
     public PlayerHealth playerHealth;
     public CameraShake cameraShake;
 
+    public float addHPValue;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerHealth.AddHP(20); // Unique behavior for the player
+            playerHealth.AddHP(addHPValue); // Unique behavior for the player
         }
 
         // Common behavior for both "bullet" and "Player"
