@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target; // Reference to the player's transform
+    private Transform target; // Reference to the player's transform
     public Vector3 offset = new Vector3(0f, 0f, -10f); // Offset to keep the camera at a distance
     Vector3 velocity = Vector3.zero;
 

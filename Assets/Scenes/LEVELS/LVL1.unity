@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517438667892426436, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: shakeDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517438667892426436, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: shakeMagnitude
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8266858809412164105, guid: 474711816de911141b844ec0901b709c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -180,7 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266858809412164341, guid: 474711816de911141b844ec0901b709c, type: 3}
       propertyPath: m_Name
-      value: Main Camera (1)
+      value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266858809412164341, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8266858809412164342, guid: 474711816de911141b844ec0901b709c, type: 3}
       propertyPath: orthographic size
@@ -203,8 +215,12 @@ PrefabInstance:
       value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 8266858809412164343, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 962395641}
+    - target: {fileID: 8266858809412164343, guid: 474711816de911141b844ec0901b709c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474711816de911141b844ec0901b709c, type: 3}
@@ -318,6 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+--- !u!4 &962395641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8988080526693412763, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+  m_PrefabInstance: {fileID: 1470779689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1196625290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,6 +4140,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: deathEffect
       value: 
       objectReference: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
@@ -4146,9 +4171,13 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.29933357
       objectReference: {fileID: 0}
+    - target: {fileID: 5596209990976228694, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412762, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: teleportCD
-      value: 9999999
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412762, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: bulletSpeed

@@ -12,6 +12,7 @@ public class CameraShake : MonoBehaviour
 
     void Start()
     {
+
         if (cameraTransform == null)
         {
             cameraTransform = Camera.main.transform; // Use the main camera if no other camera is assigned
@@ -20,6 +21,9 @@ public class CameraShake : MonoBehaviour
 
     public void TriggerShake()
     {
+        gameObject.SetActive(true);
+        Debug.Log(gameObject.activeInHierarchy);
+
         if (!isShaking)
         {
             StartCoroutine(Shake());
@@ -28,6 +32,7 @@ public class CameraShake : MonoBehaviour
 
     IEnumerator Shake()
     {
+
         isShaking = true;
         float elapsed = 0.0f;
 
