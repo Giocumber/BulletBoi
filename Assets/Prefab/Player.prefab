@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6130204223640346771}
   - component: {fileID: 3867768523781849985}
   - component: {fileID: 3688876706801606086}
-  - component: {fileID: 4827128247493824843}
   m_Layer: 0
   m_Name: HEAD
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4392570336057204694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 1.5599995, z: 0}
+  m_LocalPosition: {x: -0.05, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8988080527092678988}
@@ -213,19 +212,6 @@ TrailRenderer:
   m_MinVertexDistance: 1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &4827128247493824843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4392570336057204694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8560e5cb81a9b9e44982d1a2f93fa96a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRotationAngle: 30
 --- !u!1 &5112982942873301084
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +357,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1356884647
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6f4dccc201484224f9237c2c7112d31b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -401,7 +387,6 @@ GameObject:
   - component: {fileID: 7834078476630727767}
   - component: {fileID: 2746579752692643753}
   - component: {fileID: 9008480345083028078}
-  - component: {fileID: 5596209990976228694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -625,20 +610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 0}
   playerHealth: {fileID: 0}
---- !u!114 &5596209990976228694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8988080526693412767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0387a10b48cef4b46b6e76632a80a2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiltSpeed: 2
-  maxTiltAngle: 80
 --- !u!1 &8988080527092678989
 GameObject:
   m_ObjectHideFlags: 0
