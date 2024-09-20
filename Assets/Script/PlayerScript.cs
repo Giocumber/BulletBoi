@@ -15,19 +15,18 @@ public class PlayerScript : MonoBehaviour
     private GameObject bullet;
     public float bulletAttackCD;
     public float teleportCD;
-   
+
     private bool canShoot;
-    private bool canTeleport;
 
     public PlayerHealth playerHealth;
     public float BulletHealthReduct;
 
+    public CameraZoom cameraZoom;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
-        canTeleport = false;
     }
 
     void Update()
@@ -36,14 +35,11 @@ public class PlayerScript : MonoBehaviour
         {
             StartCoroutine(Cooldown());
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
-            {
-                StartCoroutine(TeleportCooldown());
-            }
-        }
 
+        if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
+        {
+            StartCoroutine(TeleportCooldown());
+        }
     }
 
     IEnumerator Cooldown()
@@ -58,8 +54,8 @@ public class PlayerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(teleportCD);
         TeleportToBullet();
+        cameraZoom.StartZoomIn(cameraZoom.targetZoom);
         Destroy(bullet);
-        canTeleport = true;
     }
 
     public void Shoot()

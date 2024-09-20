@@ -22,7 +22,6 @@ public class CameraShake : MonoBehaviour
     public void TriggerShake()
     {
         gameObject.SetActive(true);
-        Debug.Log(gameObject.activeInHierarchy);
 
         if (!isShaking)
         {
