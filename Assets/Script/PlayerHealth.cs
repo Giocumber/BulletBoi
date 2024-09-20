@@ -21,6 +21,16 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+
+        if (currentHealth > 100)
+        {
+            SetMaximumHealth();
+        }
+    }
+
+    void SetMaximumHealth()
+    {
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
