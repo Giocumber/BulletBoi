@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9245283, g: 0.06541473, b: 0.06541473, a: 1}
+  m_Color: {r: 0.49056602, g: 0.020363096, b: 0.020363096, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,3 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
+  playerHealth: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+  cameraShake: {fileID: 4517438667892426436, guid: 474711816de911141b844ec0901b709c, type: 3}

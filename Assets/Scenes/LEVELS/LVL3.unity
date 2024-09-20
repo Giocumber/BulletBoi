@@ -249,7 +249,7 @@ Transform:
   m_Children:
   - {fileID: 842507210}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &842507210 stripped
 Transform:
@@ -16840,7 +16840,7 @@ Transform:
   - {fileID: 1510025137}
   - {fileID: 999363344}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1196625293
 TilemapCollider2D:
@@ -22273,6 +22273,18 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3688876706801606086, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688876706801606086, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688876706801606086, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1356884647
+      objectReference: {fileID: 0}
     - target: {fileID: 4255368830199464384, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: slowMotionFactor
       value: 0.2
@@ -22305,6 +22317,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6130204223640346771, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130204223640346771, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130204223640346771, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1356884647
+      objectReference: {fileID: 0}
     - target: {fileID: 8988080526404171925, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -22328,6 +22352,10 @@ PrefabInstance:
     - target: {fileID: 8988080526693412760, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988080526693412760, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412762, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: teleportCD
@@ -22351,7 +22379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412763, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412763, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_LocalScale.x
@@ -23501,7 +23529,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
