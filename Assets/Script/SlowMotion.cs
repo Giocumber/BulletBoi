@@ -8,6 +8,9 @@ public class SlowMotion : MonoBehaviour
     public bool slowMotionEffect = false; // To track slow-motion state
     private bool isSlowMoActive = false;
 
+
+    public CameraZoom cameraZoom;
+
     void Update()
     {
         // Check if the space key is being held down
@@ -18,6 +21,7 @@ public class SlowMotion : MonoBehaviour
         else
         {
             DeactivateSlowMotion();
+            cameraZoom.ReturnToOriginalZoom();
         }
     }
 

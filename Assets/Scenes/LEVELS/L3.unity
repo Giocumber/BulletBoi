@@ -8791,6 +8791,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8132814797027173627, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1568444113}
+    - target: {fileID: 8132814797027173627, guid: 474711816de911141b844ec0901b709c, type: 3}
+      propertyPath: targetZoom
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8266858809412164105, guid: 474711816de911141b844ec0901b709c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9587,6 +9595,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4255368830199464384, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: cameraZoom
+      value: 
+      objectReference: {fileID: 1568444110}
+    - target: {fileID: 4255368830199464384, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: slowMotionFactor
       value: 0.2
       objectReference: {fileID: 0}
@@ -9722,6 +9734,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8988080526693412762, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
+      propertyPath: cameraZoom
+      value: 
+      objectReference: {fileID: 1568444110}
     - target: {fileID: 8988080526693412762, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: teleportCD
       value: 0.15
@@ -10096,6 +10112,22 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6617927503323358676, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
   m_PrefabInstance: {fileID: 1554232962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568444110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8132814797027173627, guid: 474711816de911141b844ec0901b709c, type: 3}
+  m_PrefabInstance: {fileID: 481816352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3369d31ef19114a8d39cd92e72e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &1568444113 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8266858809412164342, guid: 474711816de911141b844ec0901b709c, type: 3}
+  m_PrefabInstance: {fileID: 481816352}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1648479306 stripped
 MonoBehaviour:
