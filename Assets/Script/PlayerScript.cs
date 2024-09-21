@@ -38,12 +38,12 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (Input.GetMouseButtonDown(0) && canShoot && !checkEnemies.allEnemiesDestroyed)
         {
             StartCoroutine(Cooldown());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && bullet != null & !checkEnemies.allEnemiesDestroyed)
+        if (Input.GetKeyDown(KeyCode.Space) && bullet != null && !checkEnemies.allEnemiesDestroyed)
         {
             StartCoroutine(TeleportCooldown());
         }
@@ -54,7 +54,7 @@ public class PlayerScript : MonoBehaviour
         Shoot();
         canShoot = false;
         yield return new WaitForSeconds(bulletAttackCD);
-        canShoot = !checkEnemies.allEnemiesDestroyed;
+        canShoot = true;
     }
 
     IEnumerator TeleportCooldown()

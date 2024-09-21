@@ -15,6 +15,7 @@ public class CheckEnemies : MonoBehaviour
     private CameraController cameraController;
 
     private GameObject playerObject;
+    public GameObject nextLvlBtn;
 
     private void Start()
     {
@@ -54,7 +55,12 @@ public class CheckEnemies : MonoBehaviour
             cameraController.isClamped = false;
             cameraZoom.StartZoomIn(6f);
         }
+
+        Invoke("NextLevelBtnPopUp", 1.5f);
     }
 
-
+    public void NextLevelBtnPopUp()
+    {
+        nextLvlBtn.SetActive(true);
+    }
 }
