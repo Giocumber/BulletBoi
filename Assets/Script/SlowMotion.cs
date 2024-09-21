@@ -10,11 +10,21 @@ public class SlowMotion : MonoBehaviour
 
 
     public CameraZoom cameraZoom;
+    private GameObject otherObj;
+    private CheckEnemies checkEnemies;
+
+    private void Start()
+    {
+        otherObj = GameObject.Find("UI_Manager");
+        if (otherObj != null)
+           checkEnemies = otherObj.GetComponent<CheckEnemies>();
+    }
+
 
     void Update()
     {
         // Check if the space key is being held down
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !checkEnemies.allEnemiesDestroyed)
         {
             ActivateSlowMotion();
         }

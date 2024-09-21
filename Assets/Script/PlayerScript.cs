@@ -23,10 +23,17 @@ public class PlayerScript : MonoBehaviour
 
     public CameraZoom cameraZoom;
 
+    private GameObject otherObj;
+    private CheckEnemies checkEnemies;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
+
+        otherObj = GameObject.Find("UI_Manager");
+        if (otherObj != null)
+            checkEnemies = otherObj.GetComponent<CheckEnemies>();
     }
 
     void Update()
@@ -36,7 +43,7 @@ public class PlayerScript : MonoBehaviour
             StartCoroutine(Cooldown());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && bullet != null)
+        if (Input.GetKeyDown(KeyCode.Space) && bullet != null & !checkEnemies.allEnemiesDestroyed)
         {
             StartCoroutine(TeleportCooldown());
         }
@@ -47,7 +54,7 @@ public class PlayerScript : MonoBehaviour
         Shoot();
         canShoot = false;
         yield return new WaitForSeconds(bulletAttackCD);
-        canShoot = true;
+        canShoot = !checkEnemies.allEnemiesDestroyed;
     }
 
     IEnumerator TeleportCooldown()

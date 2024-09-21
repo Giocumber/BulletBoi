@@ -15,7 +15,6 @@ public class CheckEnemies : MonoBehaviour
     private CameraController cameraController;
 
     private GameObject playerObject;
-    private PlayerScript playerScript;
 
     private void Start()
     {
@@ -29,11 +28,6 @@ public class CheckEnemies : MonoBehaviour
         }
 
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (playerObject != null)
-        {
-            // Get the script (or any other component) from the other game object
-            playerScript = playerObject.GetComponent<PlayerScript>();
-        }
     }
 
     void Update()
@@ -54,7 +48,6 @@ public class CheckEnemies : MonoBehaviour
         lvlCompleteImage.SetActive(true);
         lvlCompleteText.SetActive(true);
         textTutor.SetActive(false);
-        playerScript.canShoot = false;
 
         if(playerObject != null)
         {
