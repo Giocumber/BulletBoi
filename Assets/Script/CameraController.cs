@@ -15,9 +15,11 @@ public class CameraController : MonoBehaviour
     public float minX, maxX, minY, maxY;
 
     private CameraShake cameraShake; // Reference to the CameraShake component
+    public bool isClamped;
 
     void Awake()
     {
+        isClamped = true;
         // Find the GameObject with the "Player" tag and get its Transform component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -47,14 +49,26 @@ public class CameraController : MonoBehaviour
             // Smoothly move the camera towards the target position
             Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
+            float clampedX = smoothedPosition.x;
+            float clampedY = smoothedPosition.y + 0.5f;
+
+            if (isClamped)
+            {
+                clampedX = Mathf.Clamp(smoothedPosition.x, minX, maxX);
+                clampedY = Mathf.Clamp(smoothedPosition.y, minY, maxY);
+            }
             // Clamp the camera's position within the defined boundaries
-            float clampedX = Mathf.Clamp(smoothedPosition.x, minX, maxX);
-            float clampedY = Mathf.Clamp(smoothedPosition.y, minY, maxY);
+
 
             // Apply the clamped position and add the shake offset
             Vector3 finalPosition = new Vector3(clampedX, clampedY, smoothedPosition.z) + cameraShake.GetShakeOffset();
 
             transform.position = finalPosition;
         }
+    }
+
+    public void offClamp()
+    {
+        isClamped = false;
     }
 }

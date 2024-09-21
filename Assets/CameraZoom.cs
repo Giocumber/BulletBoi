@@ -13,12 +13,19 @@ public class CameraZoom : MonoBehaviour
     private float originalZoom;  // Original zoom level of the camera
     private bool zoomingIn = false;
 
+    private CheckEnemies checkEnemies;
+    private GameObject checkEnemiesObj;
+
+
     void Start()
     {
+        checkEnemiesObj = GameObject.Find("UI_Manager");
+        if (checkEnemiesObj != null)
+            checkEnemies = checkEnemiesObj.GetComponent<CheckEnemies>();
+
+
         if (cam == null)
-        {
             cam = Camera.main;  // Default to the main camera if not assigned
-        }
 
         // Store the camera's initial orthographic size
         originalZoom = cam.orthographicSize;
@@ -27,13 +34,13 @@ public class CameraZoom : MonoBehaviour
     void Update()
     {
         // Zoom in smoothly if triggered
-        if (zoomingIn)
+        if (zoomingIn || checkEnemies.allEnemiesDestroyed)
         {
             // Interpolate the zoom value to the target zoom
             float newZoom = Mathf.Lerp(cam.orthographicSize, targetZoom, Time.deltaTime * zoomLerpSpeed);
             cam.orthographicSize = newZoom;
         }
-        else
+        else 
         {
             float newZoom = Mathf.Lerp(cam.orthographicSize, originalZoom, Time.deltaTime * zoomLerpSpeed);
             cam.orthographicSize = newZoom;

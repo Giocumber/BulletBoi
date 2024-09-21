@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     public float bulletAttackCD;
     public float teleportCD;
 
-    private bool canShoot;
+    public bool canShoot;
 
     public PlayerHealth playerHealth;
     public float BulletHealthReduct;

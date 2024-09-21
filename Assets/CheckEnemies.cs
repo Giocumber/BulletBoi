@@ -9,6 +9,33 @@ public class CheckEnemies : MonoBehaviour
     public GameObject lvlCompleteText;
     public GameObject textTutor;
 
+    // Private reference to another game object
+    private GameObject camObject;
+    private CameraZoom cameraZoom;
+    private CameraController cameraController;
+
+    private GameObject playerObject;
+    private PlayerScript playerScript;
+
+    private void Start()
+    {
+        camObject = GameObject.FindGameObjectWithTag("MainCamera");
+
+        if (camObject != null)
+        {
+            // Get the script (or any other component) from the other game object
+            cameraZoom = camObject.GetComponent<CameraZoom>();
+            cameraController = camObject.GetComponent<CameraController>();
+        }
+
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            // Get the script (or any other component) from the other game object
+            playerScript = playerObject.GetComponent<PlayerScript>();
+        }
+    }
+
     void Update()
     {
         // Check if there are no enemies left in the scene
@@ -24,9 +51,17 @@ public class CheckEnemies : MonoBehaviour
     // This method is called when all enemies are destroyed
     void OnAllEnemiesDestroyed()
     {
-        Debug.Log("All enemies are destroyed!");
         lvlCompleteImage.SetActive(true);
         lvlCompleteText.SetActive(true);
         textTutor.SetActive(false);
+        playerScript.canShoot = false;
+
+        if(playerObject != null)
+        {
+            cameraController.isClamped = false;
+            cameraZoom.StartZoomIn(6f);
+        }
     }
+
+
 }
