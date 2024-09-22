@@ -5,8 +5,9 @@ using UnityEngine;
 public class CheckEnemies : MonoBehaviour
 {
     public bool allEnemiesDestroyed = false;  // Tracks whether all enemies are destroyed
-    public GameObject lvlCompleteImage;
+    public GameObject lvlTopImage;
     public GameObject lvlCompleteText;
+    public GameObject lvlFailedText;
     public GameObject textTutor;
 
     // Private reference to another game object
@@ -16,6 +17,7 @@ public class CheckEnemies : MonoBehaviour
 
     private GameObject playerObject;
     public GameObject nextLvlBtn;
+    public GameObject retryLvlBtn;
 
     private void Start()
     {
@@ -34,9 +36,13 @@ public class CheckEnemies : MonoBehaviour
     void Update()
     {
         // Check if there are no enemies left in the scene
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> enemies = new List<GameObject>();
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("WSpikeEnemy"));
 
-        if (enemies.Length == 0 && !allEnemiesDestroyed)
+        //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemies.Count == 0 && !allEnemiesDestroyed)
         {
             allEnemiesDestroyed = true;
             OnAllEnemiesDestroyed();
@@ -46,7 +52,7 @@ public class CheckEnemies : MonoBehaviour
     // This method is called when all enemies are destroyed
     void OnAllEnemiesDestroyed()
     {
-        lvlCompleteImage.SetActive(true);
+        lvlTopImage.SetActive(true);
         lvlCompleteText.SetActive(true);
         textTutor.SetActive(false);
 
@@ -59,8 +65,20 @@ public class CheckEnemies : MonoBehaviour
         Invoke("NextLevelBtnPopUp", 1.5f);
     }
 
+    public void LevelFailed()
+    {
+        lvlTopImage.SetActive(true);
+        lvlFailedText.SetActive(true);
+        Invoke("RetryBtnPopUp", 1.5f);
+    }
+
     public void NextLevelBtnPopUp()
     {
         nextLvlBtn.SetActive(true);
+    }
+
+    public void RetryBtnPopUp()
+    {
+        retryLvlBtn.SetActive(true);
     }
 }

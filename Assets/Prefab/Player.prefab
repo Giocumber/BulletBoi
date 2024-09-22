@@ -552,8 +552,10 @@ MonoBehaviour:
   knockbackForce: 2
   bulletAttackCD: 0
   teleportCD: 0
+  canShoot: 0
   playerHealth: {fileID: 2746579752692643753}
   BulletHealthReduct: 10
+  cameraZoom: {fileID: 0}
 --- !u!114 &4255368830199464384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowMotionFactor: 0.2
   slowMotionEffect: 0
+  cameraZoom: {fileID: 0}
 --- !u!114 &7834078476630727767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92f1d7f81b6c0c4183e585613ca1b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 220
+  currentHealth: 100
   maxHealth: 100
   deathEffect: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
   healthBarObj: {fileID: 5436833945303584836, guid: e879ce90281f6c844883496bab1abd3f, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
-  spikeDamage: 20
+  spikeDamage: 10
 --- !u!1001 &2650868986229293143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24,6 +24,10 @@ PrefabInstance:
     - target: {fileID: 6617927503323358664, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Name
       value: EnemySpike
+      objectReference: {fileID: 0}
+    - target: {fileID: 6617927503323358664, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_TagString
+      value: WSpikeEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358676, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_RootOrder

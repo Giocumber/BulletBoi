@@ -20,8 +20,12 @@ public class CameraZoom : MonoBehaviour
     void Start()
     {
         checkEnemiesObj = GameObject.Find("UI_Manager");
+
         if (checkEnemiesObj != null)
+        {
             checkEnemies = checkEnemiesObj.GetComponent<CheckEnemies>();
+            Debug.Log("wow");
+        }
 
 
         if (cam == null)

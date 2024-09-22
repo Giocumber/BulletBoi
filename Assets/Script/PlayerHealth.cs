@@ -10,9 +10,11 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject healthBarObj;
 
+    private CheckEnemies checkEnemies;
+
     private void Start()
     {
-        
+        checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
     }
 
     private void Update()
@@ -50,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(false);
         healthBarObj.gameObject.SetActive(false);
 
+        checkEnemies.LevelFailed();
     }
 
     public void Respawn()
