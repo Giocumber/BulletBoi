@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerScript : MonoBehaviour
     private GameObject otherObj;
     private CheckEnemies checkEnemies;
 
+    private SceneManagerScript sceneManagerScript;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,13 +37,18 @@ public class PlayerScript : MonoBehaviour
         otherObj = GameObject.Find("UI_Manager");
         if (otherObj != null)
             checkEnemies = otherObj.GetComponent<CheckEnemies>();
+
+        otherObj = GameObject.Find("SceneManager");
+        if (otherObj != null)
+            sceneManagerScript = otherObj.GetComponent<SceneManagerScript>();
+
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && !checkEnemies.allEnemiesDestroyed)
+        if (CanShoot())
         {
-            StartCoroutine(Cooldown());
+            StartCoroutine(ShootCooldown());
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && bullet != null && !checkEnemies.allEnemiesDestroyed)
@@ -49,7 +57,29 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    IEnumerator Cooldown()
+    #region SHOOT CONDITIONS
+    bool CanShoot()
+    {
+        return IsLeftClick() && IsGameActive() && !IsPointerOverUI();
+    }
+
+    bool IsLeftClick()
+    {
+        return Input.GetMouseButtonDown(0);
+    }
+
+    bool IsGameActive()
+    {
+        return canShoot && !checkEnemies.allEnemiesDestroyed && !sceneManagerScript.isPaused;
+    }
+
+    bool IsPointerOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+    #endregion
+
+    IEnumerator ShootCooldown()
     {
         Shoot();
         canShoot = false;

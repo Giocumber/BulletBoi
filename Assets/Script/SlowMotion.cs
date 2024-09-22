@@ -13,18 +13,25 @@ public class SlowMotion : MonoBehaviour
     private GameObject otherObj;
     private CheckEnemies checkEnemies;
 
+    private SceneManagerScript sceneManagerScript;
+
+
     private void Start()
     {
         otherObj = GameObject.Find("UI_Manager");
         if (otherObj != null)
            checkEnemies = otherObj.GetComponent<CheckEnemies>();
+
+        otherObj = GameObject.Find("SceneManager");
+        if (otherObj != null)
+            sceneManagerScript = otherObj.GetComponent<SceneManagerScript>();
     }
 
 
     void Update()
     {
         // Check if the space key is being held down
-        if (Input.GetKey(KeyCode.Space) && !checkEnemies.allEnemiesDestroyed)
+        if (Input.GetKey(KeyCode.Space) && !checkEnemies.allEnemiesDestroyed && !sceneManagerScript.isPaused)
         {
             ActivateSlowMotion();
         }
@@ -49,8 +56,9 @@ public class SlowMotion : MonoBehaviour
 
     void DeactivateSlowMotion()
     {
+
         // Revert to normal time scale if slow-motion is active
-        if (isSlowMoActive)
+        if (isSlowMoActive && !sceneManagerScript.isPaused)
         {
             isSlowMoActive = false;
             Time.timeScale = 1f; // Reset to normal speed
