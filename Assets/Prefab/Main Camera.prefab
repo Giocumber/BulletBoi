@@ -104,6 +104,7 @@ MonoBehaviour:
   maxX: 33
   minY: 3
   maxY: 11
+  isClamped: 0
 --- !u!114 &4517438667892426436
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,12 +36,13 @@ public class PlayerScript : MonoBehaviour
 
         otherObj = GameObject.Find("UI_Manager");
         if (otherObj != null)
+        {
             checkEnemies = otherObj.GetComponent<CheckEnemies>();
+        }
 
         otherObj = GameObject.Find("SceneManager");
         if (otherObj != null)
             sceneManagerScript = otherObj.GetComponent<SceneManagerScript>();
-
     }
 
     void Update()
@@ -51,6 +52,7 @@ public class PlayerScript : MonoBehaviour
             StartCoroutine(ShootCooldown());
         }
 
+        //&& bullet != null && !checkEnemies.allEnemiesDestroyed
         if (Input.GetKeyDown(KeyCode.Space) && bullet != null && !checkEnemies.allEnemiesDestroyed)
         {
             StartCoroutine(TeleportCooldown());

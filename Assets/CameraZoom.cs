@@ -24,7 +24,6 @@ public class CameraZoom : MonoBehaviour
         if (checkEnemiesObj != null)
         {
             checkEnemies = checkEnemiesObj.GetComponent<CheckEnemies>();
-            Debug.Log("wow");
         }
 
 
