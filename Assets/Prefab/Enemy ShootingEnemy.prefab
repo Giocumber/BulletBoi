@@ -53,9 +53,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2157812939764702705, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: bed37a2257a939f4ebf0a13cb185f4d7, type: 2}
+    - target: {fileID: 2157812939764702705, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358664, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Name
-      value: ShootingEnemy
+      value: Enemy ShootingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358676, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_RootOrder
@@ -112,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 6617927503323358677, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Color.r
       value: 0.55505574
+      objectReference: {fileID: 0}
+    - target: {fileID: 6617927503323358679, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: moveSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
