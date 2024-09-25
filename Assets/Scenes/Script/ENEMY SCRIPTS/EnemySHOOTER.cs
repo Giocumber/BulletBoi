@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +24,12 @@ public class EnemySHOOTER: MonoBehaviour
     private bool isFollowingPlayer = false;
     private Transform player;
 
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
         StartCoroutine(RandomMovement());
     }
@@ -55,9 +57,6 @@ public class EnemySHOOTER: MonoBehaviour
             }
             else if (distanceToPlayer > stopRadius)
             {
-              
-
-
                 // Player is within range but not too close, follow the player
                 FollowPlayer();
                 target = new Vector2(player.position.x, player.position.y);
@@ -78,7 +77,9 @@ public class EnemySHOOTER: MonoBehaviour
     {    // Move towards the player if within range but stop at the stop radius
         target = player.position;
         Vector2 direction = (target - (Vector2)transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+        rb.MovePosition(Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime));
+        //Change moving using physics (Rigidbody2D)
     }
 
     private void RepositionFromPlayer()
@@ -87,8 +88,9 @@ public class EnemySHOOTER: MonoBehaviour
         Vector2 directionAway = (transform.position - player.position).normalized;
         target = (Vector2)transform.position + directionAway * repositionDistance;
 
-        // Move to the new target (away from player)
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        // Move to the new target (away from player) using Rigidbody2D to respect collisions
+        rb.MovePosition(Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime));
+        //Change moving using physics (Rigidbody2D)
     }
 
     private IEnumerator RandomMovement()
@@ -129,6 +131,7 @@ public class EnemySHOOTER: MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void StartShooting()
     {
         StartCoroutine(EnemyShootCD());
@@ -138,12 +141,11 @@ public class EnemySHOOTER: MonoBehaviour
     {
         // Wait for the cooldown before shooting
         yield return new WaitForSeconds(enemyAttackCD);
-        Shoot();
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-{
 
-}
+        if(gameObject != null)
+            Shoot();
+    }
+
     void Shoot()
     { // Get the player's current position at the time of shooting
         Vector3 playerPosition = player.position; // Directly target player's position for shooting
@@ -163,7 +165,5 @@ public class EnemySHOOTER: MonoBehaviour
         // Rotate the bullet to face the direction it's moving
         float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
         bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle); // Adjust rotation to face direction of travel
-        
-
     }
 }
