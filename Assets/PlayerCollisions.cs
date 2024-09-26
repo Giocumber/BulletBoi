@@ -10,17 +10,23 @@ public class PlayerCollisions : MonoBehaviour
     public float collisionBoost = 4f;
     public float hpAdd = 30f;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<PlayerHealth>();
         cameraShake = GameObject.Find("MainCamera").GetComponent<CameraShake>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("BasicEnemy"))
         {
+            if (!audioManager.SFXBiteSource.isPlaying)
+                audioManager.PlayBiteSFX();
             //Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y) * collisionBoost;
 

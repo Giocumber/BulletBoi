@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     public float BulletHealthReduct;
     private CameraZoom cameraZoom;
     private CheckEnemies checkEnemies;
+    private AudioManager audioManager;
 
     private SceneManagerScript sceneManagerScript;
 
@@ -31,6 +32,8 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<PlayerHealth>();
         cameraZoom = GameObject.Find("MainCamera").GetComponent<CameraZoom>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        
         canShoot = true;
 
         checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
@@ -91,6 +94,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Shoot()
     {
+        audioManager.PlaySFX(audioManager.gunShotSfx);
         playerHealth.TakeDamage(BulletHealthReduct);
 
         bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);

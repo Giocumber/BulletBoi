@@ -12,6 +12,8 @@ public class SlowMotion : MonoBehaviour
     private CheckEnemies checkEnemies;
     private SceneManagerScript sceneManagerScript;
     private PlayerScript playerScript;
+    private AudioManager audioManager;
+
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class SlowMotion : MonoBehaviour
         checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
         sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
         playerScript = GetComponent<PlayerScript>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
 
@@ -41,6 +44,12 @@ public class SlowMotion : MonoBehaviour
 
     void ActivateSlowMotion()
     {
+        if (!audioManager.SFXHeartbeatSource.isPlaying)
+        {
+            // Play the audio
+            audioManager.HeartbeatSFX();
+        }
+
         // Apply slow-motion effect if it's not already active
         if (!isSlowMoActive)
         {
@@ -53,6 +62,11 @@ public class SlowMotion : MonoBehaviour
 
     public void DeactivateSlowMotion()
     {
+        if (audioManager.SFXHeartbeatSource.isPlaying)
+        {
+            // Play the audio
+            audioManager.SFXHeartbeatSource.Stop();
+        }
 
         // Revert to normal time scale if slow-motion is active
         if (isSlowMoActive && !sceneManagerScript.isPaused)

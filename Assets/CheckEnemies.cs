@@ -42,8 +42,6 @@ public class CheckEnemies : MonoBehaviour
         enemies.AddRange(GameObject.FindGameObjectsWithTag("GhostEnemy"));
         enemies.AddRange(GameObject.FindGameObjectsWithTag("ShootingEnemy"));
 
-        //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
         if (enemies.Count == 0 && !allEnemiesDestroyed)
         {
             allEnemiesDestroyed = true;
@@ -58,20 +56,17 @@ public class CheckEnemies : MonoBehaviour
         lvlCompleteText.SetActive(true);
         textTutor.SetActive(false);
 
-        if(playerObject != null)
+        if (playerObject != null)
         {
             cameraController.isClamped = false;
             cameraZoom.StartZoomIn(6f);
         }
-
         Invoke("NextLevelBtnPopUp", 1.5f);
     }
 
     public void LevelFailed()
     {
-        lvlTopImage.SetActive(true);
-        lvlFailedText.SetActive(true);
-        Invoke("RetryBtnPopUp", 1.5f);
+        StartCoroutine(LevelFailedCooldown());
     }
 
     public void NextLevelBtnPopUp()
@@ -83,4 +78,16 @@ public class CheckEnemies : MonoBehaviour
     {
         retryLvlBtn.SetActive(true);
     }
+
+    public IEnumerator LevelFailedCooldown()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if (!allEnemiesDestroyed)
+        {
+            lvlTopImage.SetActive(true);
+            lvlFailedText.SetActive(true);
+            Invoke("RetryBtnPopUp", 1.5f);
+        }
+    }
 }
+
