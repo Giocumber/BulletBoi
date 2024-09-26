@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 221832040027649676}
   - component: {fileID: 221832040027649675}
   m_Layer: 0
-  m_Name: SFX
+  m_Name: GunSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.4
+  m_Pitch: 0.7
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 221832040920410829}
   - component: {fileID: 221832040920410828}
   m_Layer: 0
-  m_Name: Music
+  m_Name: BGMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -301,13 +301,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a34ae25357c164681c37a9ba91cae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 221832040920410828}
+  BGMusicSource: {fileID: 221832040920410828}
   SFXSource: {fileID: 221832040027649675}
   SFXBiteSource: {fileID: 3059118244488299107}
   SFXHeartbeatSource: {fileID: 3541256884121005015}
   gunShotSfx: {fileID: 8300000, guid: 79cf2874d68a8464a960e99f472e9a59, type: 3}
   biteSfx: {fileID: 8300000, guid: 02f25dc1ba29632469dee43ddd32fd52, type: 3}
   heartbeatSfx: {fileID: 8300000, guid: 471d87eece84e074d9b5eff489d11fd4, type: 3}
+  BGMusic: {fileID: 8300000, guid: 53e61dd1d24caaf4493cf1f7b35f499c, type: 3}
 --- !u!1 &3327270837291611048
 GameObject:
   m_ObjectHideFlags: 0

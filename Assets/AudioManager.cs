@@ -5,7 +5,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("------------- Audio Source -------------")]
-    public AudioSource musicSource;
     public AudioSource SFXSource;
     public AudioSource SFXBiteSource;
     public AudioSource SFXHeartbeatSource;
@@ -15,6 +14,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip gunShotSfx;
     public AudioClip biteSfx;
     public AudioClip heartbeatSfx;
+
+    private void Start()
+    {
+    }
+
 
     public void PlaySFX(AudioClip sfxName)
     {
