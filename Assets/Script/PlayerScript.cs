@@ -19,12 +19,9 @@ public class PlayerScript : MonoBehaviour
 
     public bool canShoot;
 
-    public PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
     public float BulletHealthReduct;
-
-    public CameraZoom cameraZoom;
-
-    private GameObject otherObj;
+    private CameraZoom cameraZoom;
     private CheckEnemies checkEnemies;
 
     private SceneManagerScript sceneManagerScript;
@@ -32,17 +29,12 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerHealth = GetComponent<PlayerHealth>();
+        cameraZoom = GameObject.Find("MainCamera").GetComponent<CameraZoom>();
         canShoot = true;
 
-        otherObj = GameObject.Find("UI_Manager");
-        if (otherObj != null)
-        {
-            checkEnemies = otherObj.GetComponent<CheckEnemies>();
-        }
-
-        otherObj = GameObject.Find("SceneManager");
-        if (otherObj != null)
-            sceneManagerScript = otherObj.GetComponent<SceneManagerScript>();
+        checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
+        sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
     }
 
     void Update()
@@ -135,14 +127,6 @@ public class PlayerScript : MonoBehaviour
         else
         {
             Debug.LogWarning("Bullet is not assigned or has already been destroyed.");
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("SpikedEnemy"))
-        {
-            KnockBack();
         }
     }
 }

@@ -133,12 +133,5 @@ public class SpikedEnemy : MonoBehaviour
         }
     }
 
-    public void ApplyKnockback(Transform playerTransform)
-    {
-        // Calculate the direction of knockback
-        Vector2 knockbackDirection = (transform.position.x > playerTransform.position.x) ? Vector2.right : Vector2.left;
 
-        // Apply knockback force in the calculated direction
-        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-    }
 }

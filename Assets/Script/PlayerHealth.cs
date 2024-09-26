@@ -11,10 +11,12 @@ public class PlayerHealth : MonoBehaviour
     public GameObject healthBarObj;
 
     private CheckEnemies checkEnemies;
+    private SlowMotion slowMotion;
 
     private void Start()
     {
         checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
+        slowMotion = GetComponent<SlowMotion>();
     }
 
     private void Update()
@@ -51,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         Instantiate(deathEffect, transform.position, transform.rotation);
         gameObject.SetActive(false);
         healthBarObj.gameObject.SetActive(false);
+        slowMotion.DeactivateSlowMotion();
 
         checkEnemies.LevelFailed();
     }

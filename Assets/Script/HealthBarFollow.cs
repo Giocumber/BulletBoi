@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class HealthBarFollow : MonoBehaviour
 {
-    public GameObject hpPos;
+    private GameObject hpPos;
+
+    private void Start()
+    {
+        hpPos = GameObject.Find("HealthPos");
+    }
+
     void Update()
     {
         transform.position = hpPos.transform.position;

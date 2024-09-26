@@ -8,23 +8,17 @@ public class SlowMotion : MonoBehaviour
     public bool slowMotionEffect = false; // To track slow-motion state
     private bool isSlowMoActive = false;
 
-
-    public CameraZoom cameraZoom;
-    private GameObject otherObj;
+    private CameraZoom cameraZoom;
     private CheckEnemies checkEnemies;
-
     private SceneManagerScript sceneManagerScript;
-
+    private PlayerScript playerScript;
 
     private void Start()
     {
-        otherObj = GameObject.Find("UI_Manager");
-        if (otherObj != null)
-           checkEnemies = otherObj.GetComponent<CheckEnemies>();
-
-        otherObj = GameObject.Find("SceneManager");
-        if (otherObj != null)
-            sceneManagerScript = otherObj.GetComponent<SceneManagerScript>();
+        cameraZoom = GameObject.Find("MainCamera").GetComponent<CameraZoom>();
+        checkEnemies = GameObject.Find("UI_Manager").GetComponent<CheckEnemies>();
+        sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
+        playerScript = GetComponent<PlayerScript>();
     }
 
 
@@ -40,6 +34,9 @@ public class SlowMotion : MonoBehaviour
             DeactivateSlowMotion();
             cameraZoom.ReturnToOriginalZoom();
         }
+
+        if (isSlowMoActive)
+            playerScript.bulletAttackCD = 0.05f;
     }
 
     void ActivateSlowMotion()
@@ -54,7 +51,7 @@ public class SlowMotion : MonoBehaviour
         }
     }
 
-    void DeactivateSlowMotion()
+    public void DeactivateSlowMotion()
     {
 
         // Revert to normal time scale if slow-motion is active

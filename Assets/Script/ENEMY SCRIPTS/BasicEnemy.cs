@@ -137,24 +137,4 @@ public class BasicEnemy : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y) * 4f;
-
-            PlayerHealth playerHealth =collision.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.AddHP(20); // Unique behavior for the player
-        }
-
-        // Common behavior for both "bullet" and "Player"
-        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Player"))
-        {
-            cameraShake.TriggerShake();
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-    }
 }

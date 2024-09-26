@@ -20742,7 +20742,7 @@ PrefabInstance:
     - target: {fileID: 612316162752659561, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: pauseMenuPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1732157349}
     - target: {fileID: 612316162752659562, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: m_Name
       value: SceneManager
@@ -21241,7 +21241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1516516110
 Transform:
   m_ObjectHideFlags: 0
@@ -21734,6 +21734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac342e390b999f4fbbb5b83a5fdcd36, type: 3}
+--- !u!1 &1732157349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3631940003904503641, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
+  m_PrefabInstance: {fileID: 1664574100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1847969414 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
