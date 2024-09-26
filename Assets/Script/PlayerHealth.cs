@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
         {
             SetMaximumHealth();
         }
+
+
     }
 
     void SetMaximumHealth()
@@ -54,7 +56,6 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(false);
         healthBarObj.gameObject.SetActive(false);
         slowMotion.DeactivateSlowMotion();
-
         checkEnemies.LevelFailed();
     }
 

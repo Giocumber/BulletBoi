@@ -125,6 +125,10 @@ public class SpikedEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Player")
         {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
@@ -132,6 +136,4 @@ public class SpikedEnemy : MonoBehaviour
             Debug.Log(playerHealth.currentHealth);
         }
     }
-
-
 }

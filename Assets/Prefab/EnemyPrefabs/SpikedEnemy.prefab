@@ -159,4 +159,4 @@ MonoBehaviour:
   moveSpeed: 15
   randomMoveInterval: 0
   repositionDistance: 0
-  spikeDamage: 5
+  spikeDamage: 0.25
