@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 5609871665664358809, guid: 2184cc692df7ce14ab1193c8b5a07610, type: 3}
+  cameraShake: {fileID: 0}
+  followRange: 5
+  stopRadius: 1
+  repositionRadius: 0.5
+  moveSpeed: 2
+  randomMoveInterval: 2
+  repositionDistance: 3
 --- !u!1001 &5831554972479799669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,16 +76,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358677, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8eaad806c812bfe4e9ade5b0257645be, type: 3}
+    - target: {fileID: 6617927503323358677, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Color.b
-      value: 0.58834225
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358677, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Color.g
-      value: 0.066666655
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358677, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_Color.r
-      value: 0.9254902
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6617927503323358679, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}

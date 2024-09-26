@@ -20,10 +20,11 @@ public class EnemySpike : MonoBehaviour
     private bool isFollowingPlayer = false;
     private Transform player;
     public float spikeDamage;
-
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
         StartCoroutine(RandomMovement());
     }
@@ -44,6 +45,7 @@ public class EnemySpike : MonoBehaviour
             {
                 // Player is too close, reposition the enemy to maintain a safe distance
                 RepositionFromPlayer();
+
             }
             else if (distanceToPlayer > stopRadius)
             {
@@ -63,6 +65,8 @@ public class EnemySpike : MonoBehaviour
         target = player.position;
         Vector2 direction = (target - (Vector2)transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        FlipSprite(direction);
+
     }
 
     private void RepositionFromPlayer()
@@ -73,8 +77,20 @@ public class EnemySpike : MonoBehaviour
 
         // Move to the new target (away from player)
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        FlipSprite(directionAway);
     }
-
+    private void FlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true; // Face left
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;// Face right
+        }
+    }
     private IEnumerator RandomMovement()
     {
         while (true)

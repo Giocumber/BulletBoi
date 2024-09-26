@@ -19,10 +19,11 @@ public class EnemyAbsorbScript : MonoBehaviour
     private Vector2 target; // Target position to follow the player
     private bool isFollowingPlayer = false;
     private Transform player;
- 
+    private SpriteRenderer spriteRenderer; // Reference to the sprite renderer for flipping
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
         StartCoroutine(RandomMovement());
     }
@@ -62,6 +63,7 @@ public class EnemyAbsorbScript : MonoBehaviour
         target = player.position;
         Vector2 direction = (target - (Vector2)transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        FlipSprite(direction);
     }
 
     private void RepositionFromPlayer()
@@ -71,9 +73,22 @@ public class EnemyAbsorbScript : MonoBehaviour
         target = (Vector2)transform.position + directionAway * repositionDistance;
 
         // Move to the new target (away from player)
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-    }
 
+        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+     
+    }
+    private void FlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true; // Face left
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;// Face right
+        }
+    }
     private IEnumerator RandomMovement()
     {
         while (true)

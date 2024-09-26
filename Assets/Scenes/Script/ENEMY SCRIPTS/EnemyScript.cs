@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,11 +19,13 @@ public class EnemyScript : MonoBehaviour
     private Vector2 target; // Target position to follow the player
     private bool isFollowingPlayer = false;
     private Transform player;
+    private SpriteRenderer spriteRenderer; // Reference to the sprite renderer for flipping
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         StartCoroutine(RandomMovement());
     }
 
@@ -62,7 +63,13 @@ public class EnemyScript : MonoBehaviour
         // Move towards the player if within range but stop at the stop radius
         target = player.position;
         Vector2 direction = (target - (Vector2)transform.position).normalized;
+
+        // Move the enemy
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+        // Flip the sprite to face the movement direction
+    FlipSprite(direction);
+
     }
 
     private void RepositionFromPlayer()
@@ -73,6 +80,10 @@ public class EnemyScript : MonoBehaviour
 
         // Move to the new target (away from player)
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+        // Flip the sprite to face the movement direction
+        RunFlipSprite(directionAway);
+        
     }
 
     private IEnumerator RandomMovement()
@@ -91,10 +102,39 @@ public class EnemyScript : MonoBehaviour
                 {
                     transform.position = Vector2.MoveTowards(transform.position, randomTarget, moveSpeed * Time.deltaTime);
                     elapsedTime += Time.deltaTime;
+
+                    // Flip the sprite to face the movement direction
+                    FlipSprite(randomDirection);
+
                     yield return null; // Wait for the next frame
                 }
             }
             yield return new WaitForSeconds(randomMoveInterval); // Wait before generating a new random direction
+        }
+    }
+
+    private void FlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true; 
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX =false ; 
+        }
+    }
+    private void RunFlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX =true ; 
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX =false;
         }
     }
 

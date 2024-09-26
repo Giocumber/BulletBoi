@@ -25,10 +25,11 @@ public class EnemySHOOTER: MonoBehaviour
     private Transform player;
 
     private Rigidbody2D rb;
-
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
         StartCoroutine(RandomMovement());
@@ -80,6 +81,7 @@ public class EnemySHOOTER: MonoBehaviour
 
         rb.MovePosition(Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime));
         //Change moving using physics (Rigidbody2D)
+        FlipSprite(direction);
     }
 
     private void RepositionFromPlayer()
@@ -92,7 +94,18 @@ public class EnemySHOOTER: MonoBehaviour
         rb.MovePosition(Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime));
         //Change moving using physics (Rigidbody2D)
     }
-
+    private void FlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true; // Face left
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;// Face right
+        }
+    }
     private IEnumerator RandomMovement()
     {
         while (true)
