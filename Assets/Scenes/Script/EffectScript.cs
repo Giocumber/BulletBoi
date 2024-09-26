@@ -8,7 +8,7 @@ public class EffectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "BasicEnemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "ShootingEnemy")
         {
             Instantiate(BulletEffect, transform.position, transform.rotation);
             Destroy(gameObject);

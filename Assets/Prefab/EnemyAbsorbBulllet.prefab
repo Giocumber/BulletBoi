@@ -31,6 +31,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAbsorbBulllet
       objectReference: {fileID: 0}
+    - target: {fileID: 6617927503323358675, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6617927503323358675, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6617927503323358676, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -93,6 +101,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6617927503323358679, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+    - {fileID: 6617927503323358678, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
+    - {fileID: 6617927503323358675, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f15e3f314b4d6949b070577a42c2f9c, type: 3}
 --- !u!1 &809032037350646973 stripped
 GameObject:

@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.54, y: 0.49}
   m_EdgeRadius: 0
 --- !u!114 &-3906442580258344311
 MonoBehaviour:
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletEffect: {fileID: 5609871665664358809, guid: db0915161ac0cbb46802fd4da52ec1f8, type: 3}
+  bulletDamage: 10
 --- !u!96 &2536570459090869014
 TrailRenderer:
   serializedVersion: 2

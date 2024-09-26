@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpike : MonoBehaviour
+public class BasicEnemy : MonoBehaviour
 {
     public GameObject deathEffect;
-    public CameraShake cameraShake;
+    private CameraShake cameraShake;
 
     public float followRange = 5f; // Range within which enemy will follow player
     public float stopRadius = 1f; // Minimum distance from the player
@@ -18,13 +18,14 @@ public class EnemySpike : MonoBehaviour
     private Vector2 target; // Target position to follow the player
     private bool isFollowingPlayer = false;
     private Transform player;
-    public float spikeDamage;
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer; // Reference to the sprite renderer for flipping
+
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
+        cameraShake = GameObject.Find("MainCamera").GetComponent<CameraShake>();
         StartCoroutine(RandomMovement());
     }
 
@@ -44,7 +45,6 @@ public class EnemySpike : MonoBehaviour
             {
                 // Player is too close, reposition the enemy to maintain a safe distance
                 RepositionFromPlayer();
-
             }
             else if (distanceToPlayer > stopRadius)
             {
@@ -63,7 +63,11 @@ public class EnemySpike : MonoBehaviour
         // Move towards the player if within range but stop at the stop radius
         target = player.position;
         Vector2 direction = (target - (Vector2)transform.position).normalized;
+
+        // Move the enemy
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+        // Flip the sprite to face the movement direction
         FlipSprite(direction);
 
     }
@@ -76,20 +80,12 @@ public class EnemySpike : MonoBehaviour
 
         // Move to the new target (away from player)
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        FlipSprite(directionAway);
+
+        // Flip the sprite to face the movement direction
+        RunFlipSprite(directionAway);
+
     }
-    private void FlipSprite(Vector2 direction)
-    {
-        // Flip the sprite on the X-axis depending on the movement direction
-        if (direction.x > 0)
-        {
-            spriteRenderer.flipX = true; // Face left
-        }
-        else if (direction.x < 0)
-        {
-            spriteRenderer.flipX = false;// Face right
-        }
-    }
+
     private IEnumerator RandomMovement()
     {
         while (true)
@@ -106,6 +102,10 @@ public class EnemySpike : MonoBehaviour
                 {
                     transform.position = Vector2.MoveTowards(transform.position, randomTarget, moveSpeed * Time.deltaTime);
                     elapsedTime += Time.deltaTime;
+
+                    // Flip the sprite to face the movement direction
+                    FlipSprite(randomDirection);
+
                     yield return null; // Wait for the next frame
                 }
             }
@@ -113,21 +113,48 @@ public class EnemySpike : MonoBehaviour
         }
     }
 
+    private void FlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
+    private void RunFlipSprite(Vector2 direction)
+    {
+        // Flip the sprite on the X-axis depending on the movement direction
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y) * 4f;
+
+            PlayerHealth playerHealth =collision.gameObject.GetComponent<PlayerHealth>();
+            playerHealth.AddHP(20); // Unique behavior for the player
         }
 
-        if (collision.gameObject.tag == "Player")
+        // Common behavior for both "bullet" and "Player"
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(spikeDamage);
-            Debug.Log(playerHealth.currentHealth);
-        }   
-
+            cameraShake.TriggerShake();
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

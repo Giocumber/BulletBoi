@@ -60,13 +60,4 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         gameObject.SetActive(false);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Spike"))
-        {
-            TakeDamage(20);
-            Debug.Log("spikehahaha");
-        }
-    }
 }

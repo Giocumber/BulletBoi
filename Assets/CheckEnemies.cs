@@ -37,8 +37,10 @@ public class CheckEnemies : MonoBehaviour
     {
         // Check if there are no enemies left in the scene
         List<GameObject> enemies = new List<GameObject>();
-        enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        enemies.AddRange(GameObject.FindGameObjectsWithTag("WSpikeEnemy"));
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("BasicEnemy"));
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("SpikedEnemy"));
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("GhostEnemy"));
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("ShootingEnemy"));
 
         //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

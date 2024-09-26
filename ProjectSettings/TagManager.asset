@@ -4,11 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bullet
   - Wall
   - Enemy
   - WSpikeEnemy
-  - Spike
+  - EnemyBullet
+  - GhostEnemy
+  - SpikedEnemy
+  - BasicEnemy
+  - ShootingEnemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

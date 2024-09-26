@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpike : MonoBehaviour
+public class SpikedEnemy : MonoBehaviour
 {
+    private Rigidbody2D rb;
     public GameObject deathEffect;
-    public CameraShake cameraShake;
+    public float knockbackForce = 5f;
+    private CameraShake cameraShake;
 
     public float followRange = 5f; // Range within which enemy will follow player
     public float stopRadius = 1f; // Minimum distance from the player
@@ -20,9 +22,11 @@ public class EnemySpike : MonoBehaviour
     private Transform player;
     public float spikeDamage;
     private SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        cameraShake = GameObject.Find("MainCamera").GetComponent<CameraShake>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         player = GameObject.FindWithTag("Player").transform; // Find the player with tag
         StartCoroutine(RandomMovement());
@@ -65,7 +69,6 @@ public class EnemySpike : MonoBehaviour
         Vector2 direction = (target - (Vector2)transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
         FlipSprite(direction);
-
     }
 
     private void RepositionFromPlayer()
@@ -127,7 +130,15 @@ public class EnemySpike : MonoBehaviour
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(spikeDamage);
             Debug.Log(playerHealth.currentHealth);
-        }   
+        }
+    }
 
+    public void ApplyKnockback(Transform playerTransform)
+    {
+        // Calculate the direction of knockback
+        Vector2 knockbackDirection = (transform.position.x > playerTransform.position.x) ? Vector2.right : Vector2.left;
+
+        // Apply knockback force in the calculated direction
+        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
     }
 }

@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 10f;
-    public float knockbackForce = 5f;
+    //public float knockbackForce = 5f;
 
     private Rigidbody2D rb;
     Rigidbody2D bulletRb;
@@ -118,14 +118,12 @@ public class PlayerScript : MonoBehaviour
         float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
         bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        //apply knockback
-        KnockBack();
     }
 
-    public void KnockBack()
-    {
-        rb.AddForce(-bulletSpawnPoint.right * knockbackForce, ForceMode2D.Impulse);
-    }
+    //public void KnockBack()
+    //{
+    //    rb.AddForce(transform.position * knockbackForce, ForceMode2D.Impulse);
+    //}
 
     void TeleportToBullet()
     {
@@ -140,4 +138,11 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("SpikedEnemy"))
+        {
+            KnockBack();
+        }
+    }
 }
