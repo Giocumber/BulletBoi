@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVELS/TutorialScenes/L6.unity
     guid: 15282e27bcbc5a54db889982ac21f887
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 1 Devour.unity
+    guid: 4180a9040b8ab1649aaf297aefab9594
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 2 Everyone.unity
+    guid: 96ade823f935bda41883a177038d732f
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 3 seek.unity
+    guid: 0caf54049d423cd42bb71072df8e76e2
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 4 Them all.unity
+    guid: 87e1998df1bf5bd479b0826a40828912
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 5 Until no one remains.unity
+    guid: 28d70e905d0875b459555b272ad419d0
   m_configObjects: {}
