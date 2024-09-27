@@ -28,7 +28,7 @@ public class ShootingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // bulletSpawnPoint = GameObject.Find("BulletSpawnPoint").transform;
+       // bulletSpawnPoint = GameObject.Find("BulletSpawnPoint").transform;
         cameraShake = GameObject.Find("MainCamera").GetComponent<CameraShake>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the sprite renderer
         rb = GetComponent<Rigidbody2D>();
