@@ -25320,6 +25320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGMusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 28728478122683128, guid: 058dcc2526cd36340870f3ad1fb1f92d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058dcc2526cd36340870f3ad1fb1f92d, type: 3}
 --- !u!1001 &736258788
@@ -26993,7 +26997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5436833945303584832, guid: e879ce90281f6c844883496bab1abd3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5436833945303584832, guid: e879ce90281f6c844883496bab1abd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27776,7 +27780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412763, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.85
+      value: -1.9499999
       objectReference: {fileID: 0}
     - target: {fileID: 8988080526693412763, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_LocalPosition.z

@@ -20061,6 +20061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGMusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 28728478122683128, guid: 058dcc2526cd36340870f3ad1fb1f92d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058dcc2526cd36340870f3ad1fb1f92d, type: 3}
 --- !u!1001 &1119382414
@@ -20768,7 +20772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5436833945303584832, guid: e879ce90281f6c844883496bab1abd3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.6887684
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 5436833945303584832, guid: e879ce90281f6c844883496bab1abd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21560,7 +21564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1517607224
 MonoBehaviour:
   m_ObjectHideFlags: 0

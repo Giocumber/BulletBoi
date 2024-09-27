@@ -6,15 +6,77 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LEVELS/L1.unity
+    path: Assets/Scenes/LEVELS/MainMenu.unity
+    guid: 8446b3f4eeae8e44299c1d9cd3b6022e
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/TutorialScenes/L1.unity
     guid: b301667a9d8dec64c8a21e0dfe092d9c
   - enabled: 1
-    path: Assets/Scenes/LEVELS/L2.unity
+    path: Assets/Scenes/LEVELS/TutorialScenes/L2.unity
     guid: 22f219991f5c15348861a57f6c2f7d24
   - enabled: 1
-    path: Assets/Scenes/LEVELS/L3.unity
+    path: Assets/Scenes/LEVELS/TutorialScenes/L3.unity
     guid: c5dbb25a3bf6e274994786de3c0b70f3
   - enabled: 1
-    path: Assets/Scenes/LEVELS/L4.unity
+    path: Assets/Scenes/LEVELS/TutorialScenes/L4.unity
     guid: 4ab356c7ba2b13b4a9e114aa247b9129
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/TutorialScenes/L5.unity
+    guid: efd6e3bdf0b35a54a9920098a7da0fb3
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/TutorialScenes/L6.unity
+    guid: 15282e27bcbc5a54db889982ac21f887
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 1 Devour.unity
+    guid: 4180a9040b8ab1649aaf297aefab9594
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 2 Everyone.unity
+    guid: 96ade823f935bda41883a177038d732f
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 3 seek.unity
+    guid: 0caf54049d423cd42bb71072df8e76e2
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 4 Them all.unity
+    guid: 87e1998df1bf5bd479b0826a40828912
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER I The Great Hunger/LEVEL 5 Until no one remains.unity
+    guid: 29097399578a3c647919e2825778bf75
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER II Overwhelming Power/LEVEL 6  Immense power.unity
+    guid: 5575b4509ee012a45a1b153860a97277
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER II Overwhelming Power/LEVEL 7 Lust for control.unity
+    guid: 8c29c50dc93efa644a454cbceb40e1c9
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER II Overwhelming Power/LEVEL 8 Chaotic mind.unity
+    guid: 947a780056463994683f4068ce622672
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER II Overwhelming Power/LEVEL9  In the dance
+      of shadows.unity
+    guid: 28d70e905d0875b459555b272ad419d0
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER II Overwhelming Power/LEVEL10 Awakens the
+      human within 1.unity
+    guid: 49941843f22b7bc4da097f50dc9196e8
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER III Phantoms of Memory/LEVEL11  Fleeting whispers
+      1.unity
+    guid: cdd093596ddc24043b06b56d74934440
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER III Phantoms of Memory/LEVEL 12 Echoes of
+      silence 1.unity
+    guid: e90847ffeb47f3d4ca53adf228cb725a
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER III Phantoms of Memory/LEVEL 13 Unveil lost
+      memories.unity
+    guid: 72b5f5f65dacb994490685c303002c27
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER IV/LEVEL 14  In the heart of conflict, 1.unity
+    guid: 57f59b08fb3b33f459e607965e97d6c8
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER IV/LEVEL 15  Fragments of fury resonate.unity
+    guid: 09e49c483d3431a48ad8155865fb6f21
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/CHAPTER IV/LEVEL 16   With the fallen,.unity
+    guid: 18f0077ffb2a2ae449fc91c741976b29
   m_configObjects: {}
