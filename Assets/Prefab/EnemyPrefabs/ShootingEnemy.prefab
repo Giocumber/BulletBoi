@@ -161,6 +161,7 @@ MonoBehaviour:
   repositionDistance: 20
   enemyAttackCD: 0.5
   bulletPrefab: {fileID: 263780698665200265, guid: 4e630e6638707bd438b3b99ff8e7e605, type: 3}
+  bulletSpawnPoint: {fileID: 6116262546235855588}
   bulletSpeed: 15
 --- !u!1 &6116262546235855587
 GameObject:
