@@ -40996,7 +40996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2746579752692643753, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: maxHealth
@@ -41292,7 +41292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9008480345083028078, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9008480345083028078, guid: 76c5dbc6711666b4ca9a01566e1396a8, type: 3}
       propertyPath: healthBarObj
@@ -41919,7 +41919,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1470779689}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e92f1d7f81b6c0c4183e585613ca1b2e, type: 3}
   m_Name: 

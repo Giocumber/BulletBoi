@@ -5,7 +5,8 @@ using UnityEngine;
 public class CheckEnemies : MonoBehaviour
 {
     public bool allEnemiesDestroyed = false;  // Tracks whether all enemies are destroyed
-    public GameObject lvlTopImage;
+    public GameObject winTopPanel;
+    public GameObject loseTopPanel;
     public GameObject lvlCompleteText;
     public GameObject lvlFailedText;
     public GameObject textTutor;
@@ -52,7 +53,7 @@ public class CheckEnemies : MonoBehaviour
     // This method is called when all enemies are destroyed
     void OnAllEnemiesDestroyed()
     {
-        lvlTopImage.SetActive(true);
+        winTopPanel.SetActive(true);
         lvlCompleteText.SetActive(true);
         textTutor.SetActive(false);
 
@@ -84,7 +85,7 @@ public class CheckEnemies : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         if (!allEnemiesDestroyed)
         {
-            lvlTopImage.SetActive(true);
+            loseTopPanel.SetActive(true);
             lvlFailedText.SetActive(true);
             Invoke("RetryBtnPopUp", 1.5f);
         }

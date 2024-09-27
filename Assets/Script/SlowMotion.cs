@@ -22,6 +22,7 @@ public class SlowMotion : MonoBehaviour
         sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
         playerScript = GetComponent<PlayerScript>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
     }
 
 
