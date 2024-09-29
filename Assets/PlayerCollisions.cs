@@ -7,7 +7,8 @@ public class PlayerCollisions : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerHealth playerHealth;
     private CameraShake cameraShake;
-    public float collisionBoost = 4f;
+    public float collisionBoostBasicEnemy = 2f;
+    public float collisionBoostGhostEnemy = 4f;
     public float hpAdd = 30f;
 
     private AudioManager audioManager;
@@ -27,13 +28,27 @@ public class PlayerCollisions : MonoBehaviour
         {
             if (!audioManager.SFXBiteSource.isPlaying)
                 audioManager.PlayBiteSFX();
-            //Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y) * collisionBoost;
 
-            playerHealth.AddHP(hpAdd); // Unique behavior for the player
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y) * collisionBoostBasicEnemy;
+
+            playerHealth.AddHP(hpAdd);
             cameraShake.TriggerShake();
             BasicEnemy basicEnemy = collision.gameObject.GetComponent<BasicEnemy>();
             Instantiate(basicEnemy.deathEffect, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("GhostEnemy"))
+        {
+            if (!audioManager.SFXBiteSource.isPlaying)
+                audioManager.PlayBiteSFX();
+
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y) * collisionBoostGhostEnemy;
+
+            playerHealth.AddHP(hpAdd);
+            cameraShake.TriggerShake();
+            GhostEnemy ghostEnemy = collision.gameObject.GetComponent<GhostEnemy>();
+            Instantiate(ghostEnemy.deathEffect, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(collision.gameObject);
         }
     }

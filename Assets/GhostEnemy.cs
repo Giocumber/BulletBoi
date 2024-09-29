@@ -111,12 +111,12 @@ public class GhostEnemy : MonoBehaviour
             yield return new WaitForSeconds(randomMoveInterval); // Wait before generating a new random direction
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        Instantiate(deathEffect, transform.position, transform.rotation);
+    //        Destroy(gameObject);
+    //    }
+    //}
 }
