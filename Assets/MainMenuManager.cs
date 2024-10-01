@@ -23,7 +23,16 @@ public class MainMenuManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+        ResetUnlockedLevel();
     }
 
+    void ResetUnlockedLevel()
+    {
+        // Reset the PlayerPrefs entry for "UnlockedLevel" to 1
+        PlayerPrefs.SetInt("UnlockedLevel", 1);
+        PlayerPrefs.Save(); // Save the changes to PlayerPrefs
+
+        Debug.Log("UnlockedLevel has been reset to 1.");
+    }
 
 }
