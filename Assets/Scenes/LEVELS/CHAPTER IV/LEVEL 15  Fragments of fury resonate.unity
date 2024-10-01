@@ -23515,7 +23515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1517607224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24145,6 +24145,13 @@ PrefabInstance:
     - target: {fileID: 7839813298717294982, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242644711160267394, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
+      propertyPath: m_text
+      value: 'LEVEL  15: "Fragments of fury resonate"
+
+
+        Destroy All BOTS'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}

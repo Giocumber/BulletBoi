@@ -6322,15 +6322,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEFT CLICK TO SHOOT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 34a6ccb10dd6d5e40abf2892baa18bda, type: 2}
+  m_sharedMaterial: {fileID: -7144017468147520601, guid: 34a6ccb10dd6d5e40abf2892baa18bda, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 2952790015
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.6862745}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6353,7 +6353,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6411,7 +6411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -7144017468147520601, guid: 34a6ccb10dd6d5e40abf2892baa18bda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6449,7 +6449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.829998, y: 6.83}
+  m_AnchoredPosition: {x: 16.829998, y: 7.99}
   m_SizeDelta: {x: 22.4, y: 1.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1543058290
@@ -6910,6 +6910,10 @@ PrefabInstance:
     - target: {fileID: 7839813298717294982, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242644711160267394, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8800549739040370796, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_IsActive
