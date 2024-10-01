@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Recoil_Gunner
+  companyName: BulletStudios
+  productName: BulletBoi
   defaultCursor: {fileID: 2800000, guid: 8c73c9f960754094f9168f2dbefe51cf, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.RecoilGunner
+    Standalone: com.BulletStudios.BulletBoi
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -270,7 +270,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 83710408f891b7c4298245b1de14d15c, type: 3}
+      m_Icon: {fileID: 2800000, guid: 9fead49ee85196c4b879bf243fde6ada, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
