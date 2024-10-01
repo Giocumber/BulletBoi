@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckEnemies : MonoBehaviour
 {
@@ -19,6 +20,17 @@ public class CheckEnemies : MonoBehaviour
     private GameObject playerObject;
     public GameObject nextLvlBtn;
     public GameObject retryLvlBtn;
+
+    private int buildIndex;
+    private Scene currentScene;
+    private void Awake()
+    {
+        // Get the current active scene
+        currentScene = SceneManager.GetActiveScene();
+
+        // Get the build index of the current scene
+        buildIndex = currentScene.buildIndex;
+    }
 
     private void Start()
     {
@@ -62,7 +74,9 @@ public class CheckEnemies : MonoBehaviour
             cameraController.isClamped = false;
             cameraZoom.StartZoomIn(6f);
         }
+
         Invoke("NextLevelBtnPopUp", 1.5f);
+        CompleteLevel(buildIndex);
     }
 
     public void LevelFailed()
@@ -88,6 +102,23 @@ public class CheckEnemies : MonoBehaviour
             loseTopPanel.SetActive(true);
             lvlFailedText.SetActive(true);
             Invoke("RetryBtnPopUp", 1.5f);
+        }
+    }
+
+
+    //UNLOCKING LEVELS
+    public void CompleteLevel(int currentLevel)
+    {
+        UpdateUnlockedLevel(currentLevel);
+    }
+
+    private void UpdateUnlockedLevel(int currentLevel)
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        if (currentLevel >= unlockedLevel)
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", currentLevel); // Unlock the next level
+            PlayerPrefs.Save(); // Ensure the changes are saved
         }
     }
 }

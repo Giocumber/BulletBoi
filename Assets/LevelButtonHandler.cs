@@ -8,10 +8,29 @@ public class LevelButtonHandler : MonoBehaviour
 
     void Start()
     {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            int levelIndex = i + 1; // Store the level index (assuming level numbers start at 1)
-            levelButtons[i].onClick.AddListener(() => LoadLevel(levelIndex));
+            int levelIndex = i + 1; // Assuming level numbers start at 1
+            Transform lockIcon = levelButtons[i].transform.Find("Image"); //papalitan sa sunod ang name
+            Transform levelNumberText = levelButtons[i].transform.Find("Text (TMP)"); //papalitan sa sunod ang name
+            Image buttonImage = levelButtons[i].GetComponent<Image>(); // Get the Image component of the button
+
+            // If the level is unlocked, enable the button and add the listener
+            if (levelIndex <= unlockedLevel)
+            {
+                levelButtons[i].interactable = true;
+                int levelNumber = levelIndex; // Store index for use in listener
+                levelButtons[i].onClick.AddListener(() => LoadLevel(levelNumber));
+                lockIcon.gameObject.SetActive(false);
+                levelNumberText.gameObject.SetActive(true);
+            }
+            else
+            {
+                buttonImage.raycastTarget = false; // Prevent clicks on the button
+                lockIcon.gameObject.SetActive(true);
+            }
         }
     }
 
