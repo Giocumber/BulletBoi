@@ -20540,7 +20540,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 612316162752659560, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 612316162752659560, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20589,7 +20589,7 @@ PrefabInstance:
     - target: {fileID: 612316162752659561, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: pauseMenuPanel
       value: 
-      objectReference: {fileID: 1732157349}
+      objectReference: {fileID: 0}
     - target: {fileID: 612316162752659562, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: m_Name
       value: SceneManager
@@ -21930,7 +21930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839813296987852661, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7839813296987852661, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22007,7 +22007,7 @@ PrefabInstance:
     - target: {fileID: 7839813297053488484, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: textTutor
       value: 
-      objectReference: {fileID: 1517607223}
+      objectReference: {fileID: 0}
     - target: {fileID: 7839813297466480519, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -22023,6 +22023,13 @@ PrefabInstance:
     - target: {fileID: 7839813298717294982, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242644711160267394, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
+      propertyPath: m_text
+      value: 'LEVEL  4: "Them all"
+
+
+        Destroy All BOTS'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
@@ -22248,11 +22255,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac342e390b999f4fbbb5b83a5fdcd36, type: 3}
---- !u!1 &1732157349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3631940003904503641, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
-  m_PrefabInstance: {fileID: 1664574100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1758362646
 PrefabInstance:
   m_ObjectHideFlags: 0

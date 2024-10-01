@@ -156,10 +156,10 @@ MonoBehaviour:
   followRange: 30
   stopRadius: 20
   repositionRadius: 20
-  moveSpeed: 30
+  moveSpeed: 20
   randomMoveInterval: 0
   repositionDistance: 20
-  enemyAttackCD: 0.5
+  enemyAttackCD: 1
   bulletPrefab: {fileID: 263780698665200265, guid: 4e630e6638707bd438b3b99ff8e7e605, type: 3}
   bulletSpawnPoint: {fileID: 6116262546235855588}
   bulletSpeed: 15
