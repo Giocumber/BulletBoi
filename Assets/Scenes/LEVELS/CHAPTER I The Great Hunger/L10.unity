@@ -22007,7 +22007,7 @@ PrefabInstance:
     - target: {fileID: 7839813297053488484, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: textTutor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1517607223}
     - target: {fileID: 7839813297466480519, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
