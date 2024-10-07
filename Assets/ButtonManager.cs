@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class ButtonManager : MonoBehaviour
@@ -93,5 +94,10 @@ public class ButtonManager : MonoBehaviour
     {
         elapsedTime = 0f;  // Reset the time
         isSliding = true;   // Start sliding
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

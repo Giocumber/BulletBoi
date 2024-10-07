@@ -38564,7 +38564,7 @@ PrefabInstance:
     - target: {fileID: 612316162752659561, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: pauseMenuPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1735572614}
     - target: {fileID: 612316162752659562, guid: 5b201f4ed2fcb084dbe7f66354d94824, type: 3}
       propertyPath: m_Name
       value: SceneManager
@@ -40977,6 +40977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4216980627a60b14eb139c159084b7b2, type: 3}
+--- !u!1 &1735572614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3631940003904503641, guid: b5cf50c0f1929014ba37bceb17abd280, type: 3}
+  m_PrefabInstance: {fileID: 1664574100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1788053496
 PrefabInstance:
   m_ObjectHideFlags: 0
